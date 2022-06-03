@@ -1,8 +1,12 @@
+.input-group, .list-group{
+    padding: 20px;
+    font-family: inherit;
+}
 
-#delete-button{
+.btn-close{
     display: none;
 }
 
-#task:hover #delete-button{
+.list-group-item:hover .btn-close{
     display: inline;
 }

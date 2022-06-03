@@ -22,22 +22,29 @@ const Todos = () => {
 
 	return (
 		<div className="App">
-			<input
-				type="text"
-				value={value}
-				onChange={(e) => setValue(e.target.value)}
-			/>{" "}
-			<button onClick={addToList}> Click to Add </button>
-			<ul>
+			<div class="input-group mb-3">
+				<input
+					class="form-control"
+					type="text"
+					value={value}
+					onChange={(e) => setValue(e.target.value)}
+				/>{" "}
+				<button class="btn btn-outline-secondary" onClick={addToList}>
+					{" "}
+					Click to Add{" "}
+				</button>
+			</div>
+
+			<ul class="list-group list-group-flush">
 				{list.length > 0 ? (
 					list.map((item, i) => (
-						<li id="task">
+						<li
+							id="task"
+							className="list-group-item list-group-item-action">
 							{item}
 							<button
-								id="delete-button"
-								onClick={() => deleteItem(i)}>
-								X
-							</button>
+								className="btn-close"
+								onClick={() => deleteItem(i)}></button>
 						</li>
 					))
 				) : (
